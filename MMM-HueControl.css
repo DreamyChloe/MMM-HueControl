@@ -1,0 +1,27 @@
+.mmm-huecontrol-wrapper {
+  min-width: 250px;
+  font-size: 0.9em;
+}
+
+.mmm-huecontrol-info {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.mmm-huecontrol-info li {
+  margin-bottom: 2px;
+}
+
+.mmm-huecontrol-notifications {
+  list-style-type: none;
+  padding: 5px;
+  background-color: rgba(50, 50, 50, 0.5);
+  border-radius: 5px;
+}
+
+.mmm-huecontrol-notifications li {
+  margin-bottom: 2px;
+  font-size: 0.85em;
+  color: #cccccc;
+}

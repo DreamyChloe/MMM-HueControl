@@ -1,0 +1,7 @@
+{
+  "DISCONNECTED": "Disconnected",
+  "HUE_BRIDGE_IP": "Hue Bridge IP: {ip}",
+  "SSE_CONNECTION_STATUS": "SSE Connection Status: {status}",
+  "RECOGNIZED_EVENTS": "Recognized Events: {count}",
+  "NOTIFICATION_ENTRY": "{timestamp}: {notification}"
+}

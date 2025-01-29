@@ -1,0 +1,37 @@
+{
+  "name": "mmm-huecontrol",
+  "version": "1.0.0",
+  "description": "A MagicMirror² module to control and display the status of Philips Hue lights",
+  "main": "MMM-HueControl.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LittleChloe/MMM-HueControl.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "module",
+    "Philips Hue",
+    "smart home"
+  ],
+  "author": "LittleChloe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LittleChloe/MMM-HueControl/issues"
+  },
+  "homepage": "https://github.com/LittleChloe/MMM-HueControl#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@stylistic/eslint-plugin": "^2.7.2",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0"
+  },
+  "dependencies": {
+    "https": "^1.0.0",
+    "events": "^3.3.0"
+  }
+}
