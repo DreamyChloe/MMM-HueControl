@@ -16,7 +16,7 @@ In your terminal, go to your MagicMirror² Module folder, clone MMM-HueControl, 
 
 ```bash
 cd ~/MagicMirror/modules
-git clone https://github.com/LittleChloe/MMM-HueControl.git
+git clone https://github.com/DreamyChloe/MMM-HueControl.git
 cd MMM-HueControl
 npm install
 ```
@@ -197,7 +197,7 @@ For example, you could use this to toggle the visibility of a module.
 
 ## Contributing
 
-If you find any bugs or have suggestions for improvements, please open an issue on the [GitHub repository](https://github.com/LittleChloe/MMM-HueControl).
+If you find any bugs or have suggestions for improvements, please open an issue on the [GitHub repository](https://github.com/DreamyChloe/MMM-HueControl).
 
 ## License
 
