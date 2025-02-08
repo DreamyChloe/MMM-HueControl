@@ -34,17 +34,17 @@ class HueListener extends EventEmitter {
 
         this.eventSource = new EventSource(url, options)
 
-        this.eventSource.addEventListener('open', () => {
+        this.eventSource.addEventListener("open", () => {
             this.isConnected = true
             this.emit("connectionStatus", "Connected")
             console.log("Connected to Hue Bridge SSE API")
         })
 
-        this.eventSource.addEventListener('message', (event) => {
+        this.eventSource.addEventListener("message", (event) => {
             this.processEventData(event.data)
         })
 
-        this.eventSource.addEventListener('error', (error) => {
+        this.eventSource.addEventListener("error", (error) => {
             console.error("Error in SSE connection:", error)
             this.emit("error", error)
             this.isConnected = false
