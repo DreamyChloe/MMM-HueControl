@@ -23,7 +23,7 @@ class HueListener extends EventEmitter {
 
     connect() {
         if (this.eventSource) {
-            this.eventSource.close();
+            this.eventSource.close()
         }
 
         const url = `https://${this.bridgeIp}/eventstream/clip/v2`
@@ -33,7 +33,8 @@ class HueListener extends EventEmitter {
                 dispatcher: new Agent({
                     connect: {
                         rejectUnauthorized: false
-                    }
+                    },
+                    bodyTimeout: 0
                 }),
                 headers: {
                     ...init.headers,
@@ -67,13 +68,13 @@ class HueListener extends EventEmitter {
 
     scheduleReconnection() {
         if (this.reconnectTimeoutId) {
-            clearTimeout(this.reconnectTimeoutId);
+            clearTimeout(this.reconnectTimeoutId)
         }
         this.reconnectTimeoutId = setTimeout(() => {
             console.log("Attempting to reconnect...")
             this.emit("connectionStatus", "Reconnecting")
             this.connect()
-            this.reconnectTimeoutId = null;
+            this.reconnectTimeoutId = null
         }, this.reconnectTimeout)
     }
 
@@ -82,7 +83,7 @@ class HueListener extends EventEmitter {
             this.eventSource.close()
         }
         if (this.reconnectTimeoutId) {
-            clearTimeout(this.reconnectTimeoutId);
+            clearTimeout(this.reconnectTimeoutId)
         }
         this.isConnected = false
         this.emit("connectionStatus", "Stopped")
