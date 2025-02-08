@@ -1,4 +1,4 @@
-const EventSource = require("eventsource")
+const { EventSource } = require("eventsource")
 const EventEmitter = require("events")
 const HueEventParser = require("./hue_event_parser")
 
@@ -22,34 +22,35 @@ class HueListener extends EventEmitter {
     connect() {
         const url = `https://${this.bridgeIp}/eventstream/clip/v2`
         const options = {
-            headers: {
-                "Accept": "text/event-stream",
-                "hue-application-key": this.appKey
-            },
-            https: {
-                rejectUnauthorized: false
-            }
+            fetch: (input, init) => fetch(input, {
+                ...init,
+                headers: {
+                    ...init.headers,
+                    "Accept": "text/event-stream",
+                    "hue-application-key": this.appKey
+                },
+            }),
         }
 
         this.eventSource = new EventSource(url, options)
 
-        this.eventSource.onopen = () => {
+        this.eventSource.addEventListener('open', () => {
             this.isConnected = true
             this.emit("connectionStatus", "Connected")
             console.log("Connected to Hue Bridge SSE API")
-        }
+        })
 
-        this.eventSource.onmessage = (event) => {
+        this.eventSource.addEventListener('message', (event) => {
             this.processEventData(event.data)
-        }
+        })
 
-        this.eventSource.onerror = (error) => {
+        this.eventSource.addEventListener('error', (error) => {
             console.error("Error in SSE connection:", error)
             this.emit("error", error)
             this.isConnected = false
             this.emit("connectionStatus", "Disconnected")
             this.scheduleReconnection()
-        }
+        })
     }
 
     scheduleReconnection() {
