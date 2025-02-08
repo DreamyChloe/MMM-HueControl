@@ -1,4 +1,4 @@
-const HueListener = require("../src/hue_listener")
+const HueListener = require("./src/hue_listener")
 const config = {
     hueBridgeIpAddress: "192.168.178.53",
     hueApplicationKey: "dVWCOzjPH0qM3EpFiC-aM9uRTipeHwbiJpIsEdHS",
