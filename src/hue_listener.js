@@ -14,6 +14,7 @@ class HueListener extends EventEmitter {
         this.eventSource = null
         this.isConnected = false
         this.eventParser = new HueEventParser(events, debug)
+        this.reconnectTimeoutId = null
     }
 
     start() {
@@ -21,6 +22,10 @@ class HueListener extends EventEmitter {
     }
 
     connect() {
+        if (this.eventSource) {
+            this.eventSource.close();
+        }
+
         const url = `https://${this.bridgeIp}/eventstream/clip/v2`
         const options = {
             fetch: (input, init) => fetch(input, {
@@ -55,21 +60,29 @@ class HueListener extends EventEmitter {
             this.emit("error", error)
             this.isConnected = false
             this.emit("connectionStatus", "Disconnected")
+            this.eventSource.close()
             this.scheduleReconnection()
         }
     }
 
     scheduleReconnection() {
-        setTimeout(() => {
+        if (this.reconnectTimeoutId) {
+            clearTimeout(this.reconnectTimeoutId);
+        }
+        this.reconnectTimeoutId = setTimeout(() => {
             console.log("Attempting to reconnect...")
             this.emit("connectionStatus", "Reconnecting")
             this.connect()
+            this.reconnectTimeoutId = null;
         }, this.reconnectTimeout)
     }
 
     stop() {
         if (this.eventSource) {
             this.eventSource.close()
+        }
+        if (this.reconnectTimeoutId) {
+            clearTimeout(this.reconnectTimeoutId);
         }
         this.isConnected = false
         this.emit("connectionStatus", "Stopped")
