@@ -33,4 +33,4 @@ temp/
 
 # Custom
 dev_context.txt
-test/test_module.js
+test_module.js
