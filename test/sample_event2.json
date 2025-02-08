@@ -1,0 +1,165 @@
+[
+  {
+    "creationtime": "2025-02-06T14:01:40Z",
+    "data": [
+      {
+        "id": "ba00496e-2b92-43a1-acfd-d051d71667f2",
+        "id_v1": "/scenes/5KlqY8tAvWrH3KPE",
+        "status": {
+          "active": "static",
+          "last_recall": "2025-02-06T14:01:39.981Z"
+        },
+        "type": "scene"
+      }
+    ],
+    "id": "6a6d2a86-ad63-4952-bec4-11f1d3aeabe8",
+    "type": "update"
+  },
+  {
+    "creationtime": "2025-02-06T14:01:40Z",
+    "data": [
+      {
+        "id": "2f76f46e-29e3-4285-bee2-4081c785ddd8",
+        "id_v1": "/lights/4",
+        "on": {
+          "on": true
+        },
+        "owner": {
+          "rid": "6d2dfe1d-1b23-4b2a-8119-3ba5636f17f0",
+          "rtype": "device"
+        },
+        "service_id": 0,
+        "type": "light"
+      },
+      {
+        "dimming": {
+          "brightness": 88.54
+        },
+        "id": "2f76f46e-29e3-4285-bee2-4081c785ddd8",
+        "id_v1": "/lights/4",
+        "owner": {
+          "rid": "6d2dfe1d-1b23-4b2a-8119-3ba5636f17f0",
+          "rtype": "device"
+        },
+        "service_id": 0,
+        "type": "light"
+      },
+      {
+        "id": "15656231-01e7-4ab4-a3f7-d032d677f991",
+        "id_v1": "/lights/5",
+        "on": {
+          "on": true
+        },
+        "owner": {
+          "rid": "1ada2f21-32bb-4f79-afe9-09226ccba72f",
+          "rtype": "device"
+        },
+        "service_id": 0,
+        "type": "light"
+      }
+    ],
+    "id": "ea249f1f-598f-45e9-86e2-9fadaa69158a",
+    "type": "update"
+  },
+  {
+    "creationtime": "2025-02-06T14:01:40Z",
+    "data": [
+      {
+        "button": {
+          "button_report": {
+            "event": "short_release",
+            "updated": "2025-02-06T14:01:40.078Z"
+          },
+          "last_event": "short_release"
+        },
+        "id": "459cabd7-7ff0-424f-b179-604e7cc6146d",
+        "id_v1": "/sensors/13",
+        "owner": {
+          "rid": "d2fe3dbc-3add-4a34-ba93-76e2d0fb11dd",
+          "rtype": "device"
+        },
+        "type": "button"
+      }
+    ],
+    "id": "f2de26b1-02ac-43ce-baad-1b860ca94189",
+    "type": "update"
+  },
+  {
+    "creationtime": "2025-02-06T14:01:40Z",
+    "data": [
+      {
+        "dimming": {
+          "brightness": 88.54
+        },
+        "id": "15656231-01e7-4ab4-a3f7-d032d677f991",
+        "id_v1": "/lights/5",
+        "owner": {
+          "rid": "1ada2f21-32bb-4f79-afe9-09226ccba72f",
+          "rtype": "device"
+        },
+        "service_id": 0,
+        "type": "light"
+      }
+    ],
+    "id": "6afccbd7-ffd7-402f-b255-cb6ee6c5f2da",
+    "type": "update"
+  },
+  {
+    "creationtime": "2025-02-06T14:01:40Z",
+    "data": [
+      {
+        "dimming": {
+          "brightness": 77.27333333333333
+        },
+        "id": "4103b79c-cacc-449e-915c-2cec55ccd5d1",
+        "id_v1": "/groups/0",
+        "owner": {
+          "rid": "8bed0b70-2845-4764-b4cc-621d82dc170f",
+          "rtype": "bridge_home"
+        },
+        "type": "grouped_light"
+      },
+      {
+        "dimming": {
+          "brightness": 44.27
+        },
+        "id": "6b0c8bc7-a31c-4383-abba-d7ee16e2e4ed",
+        "id_v1": "/groups/81",
+        "on": {
+          "on": true
+        },
+        "owner": {
+          "rid": "a3c007ef-ebeb-419e-91bf-b4fa4e401a89",
+          "rtype": "room"
+        },
+        "type": "grouped_light"
+      },
+      {
+        "dimming": {
+          "brightness": 92.03000000000002
+        },
+        "id": "4103b79c-cacc-449e-915c-2cec55ccd5d1",
+        "id_v1": "/groups/0",
+        "owner": {
+          "rid": "8bed0b70-2845-4764-b4cc-621d82dc170f",
+          "rtype": "bridge_home"
+        },
+        "type": "grouped_light"
+      },
+      {
+        "dimming": {
+          "brightness": 88.54
+        },
+        "id": "6b0c8bc7-a31c-4383-abba-d7ee16e2e4ed",
+        "id_v1": "/groups/81",
+        "owner": {
+          "rid": "a3c007ef-ebeb-419e-91bf-b4fa4e401a89",
+          "rtype": "room"
+        },
+        "type": "grouped_light"
+      }
+    ],
+    "id": "d1a492a8-159b-4402-87ff-d440dbb74752",
+    "type": "update"
+  }
+]

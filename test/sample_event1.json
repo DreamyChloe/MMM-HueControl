@@ -1,0 +1,33 @@
+[
+  {
+    "creationtime": "2025-02-06T15:59:10Z",
+    "data": [
+      {
+        "dimming": {
+          "brightness": 62.51666666666667
+        },
+        "id": "4103b79c-cacc-449e-915c-2cec55ccd5d1",
+        "id_v1": "/groups/0",
+        "owner": {
+          "rid": "8bed0b70-2845-4764-b4cc-621d82dc170f",
+          "rtype": "bridge_home"
+        },
+        "type": "grouped_light"
+      },
+      {
+        "id": "6b0c8bc7-a31c-4383-abba-d7ee16e2e4ed",
+        "id_v1": "/groups/81",
+        "on": {
+          "on": true
+        },
+        "owner": {
+          "rid": "a3c007ef-ebeb-419e-91bf-b4fa4e401a89",
+          "rtype": "room"
+        },
+        "type": "grouped_light"
+      }
+    ],
+    "id": "46d3df0e-ee93-45a7-9951-abe8e6a06563",
+    "type": "update"
+  }
+]
