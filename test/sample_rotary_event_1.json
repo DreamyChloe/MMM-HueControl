@@ -1,0 +1,37 @@
+[
+  {
+    "creationtime": "2025-02-12T16:54:47Z",
+    "data": [
+      {
+        "id": "e95a3f4a-1f12-47c6-a4ff-ff43e9d74450",
+        "id_v1": "/sensors/17",
+        "owner": {
+          "rid": "dd21c9a5-6d59-465f-ae85-4190d736945b",
+          "rtype": "device"
+        },
+        "relative_rotary": {
+          "last_event": {
+            "action": "start",
+            "rotation": {
+              "direction": "clock_wise",
+              "duration": 400,
+              "steps": 15
+            }
+          },
+          "rotary_report": {
+            "action": "start",
+            "rotation": {
+              "direction": "clock_wise",
+              "duration": 400,
+              "steps": 15
+            },
+            "updated": "2025-02-12T16:54:47.531Z"
+          }
+        },
+        "type": "relative_rotary"
+      }
+    ],
+    "id": "9062b58a-3166-4f60-a9d2-b66b3f1935a5",
+    "type": "update"
+  }
+]

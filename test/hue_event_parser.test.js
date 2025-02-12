@@ -24,6 +24,20 @@ describe("HueEventParser", () => {
                 }
             },
             notification: "BUTTON_PRESSED"
+        },
+        {
+            eventId: "e95a3f4a-1f12-47c6-a4ff-ff43e9d74450",
+            eventType: "relative_rotary",
+            eventContent: {
+                relative_rotary: {
+                    rotary_report: {
+                        rotation: {
+                            direction: "clock_wise",
+                        }
+                    }
+                }
+            },
+            notification: "DIALED_CLOCK_WISE"
         }
     ]
 
@@ -36,8 +50,8 @@ describe("HueEventParser", () => {
         return fs.readFileSync(filePath, "utf8")
     }
 
-    test("parseEventData with sample_event1.json", () => {
-        const sampleEvent1 = loadSampleEvent("sample_event1.json")
+    test("parseEventData with sample_event_1.json", () => {
+        const sampleEvent1 = loadSampleEvent("sample_event_1.json")
         const result = parser.parseEventData(sampleEvent1)
 
         expect(result).toHaveLength(1)
@@ -48,8 +62,8 @@ describe("HueEventParser", () => {
         })
     })
 
-    test("parseEventData with sample_event2.json", () => {
-        const sampleEvent2 = loadSampleEvent("sample_event2.json")
+    test("parseEventData with sample_event_2.json", () => {
+        const sampleEvent2 = loadSampleEvent("sample_event_2.json")
         const result = parser.parseEventData(sampleEvent2)
 
         expect(result).toHaveLength(2)
@@ -62,6 +76,32 @@ describe("HueEventParser", () => {
             eventId: "6b0c8bc7-a31c-4383-abba-d7ee16e2e4ed",
             type: "grouped_light",
             status: "LIGHT_TURNED_ON"
+        })
+    })
+
+    test("parseEventData with sample_rotary_event_1.json", () => {
+        const sampleRotaryEvent1 = loadSampleEvent("sample_rotary_event_1.json")
+        const result = parser.parseEventData(sampleRotaryEvent1)
+
+        expect(result).toHaveLength(1)
+        expect(result[0]).toEqual({
+            eventId: "e95a3f4a-1f12-47c6-a4ff-ff43e9d74450",
+            type: "relative_rotary",
+            status: "DIALED_CLOCK_WISE",
+            value: 15
+        })
+    })
+
+    test("parseEventData with sample_rotary_event_2.json", () => {
+        const sampleRotaryEvent2 = loadSampleEvent("sample_rotary_event_2.json")
+        const result = parser.parseEventData(sampleRotaryEvent2)
+
+        expect(result).toHaveLength(1)
+        expect(result[0]).toEqual({
+            eventId: "e95a3f4a-1f12-47c6-a4ff-ff43e9d74450",
+            type: "relative_rotary",
+            status: "DIALED_CLOCK_WISE",
+            value: 212
         })
     })
 

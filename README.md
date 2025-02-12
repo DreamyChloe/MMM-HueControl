@@ -195,6 +195,40 @@ In this configuration, when the Hue button (with ID "459cabd7-7ff0-424f-b179-604
 
 For example, you could use this to toggle the visibility of a module.
 
+### Dial Support (beta)
+
+MMM-HueControl now supports Philips Hue Tap dial switches. When a `"relative_rotary"` event is received, the module will include the `steps` value in the notification. This allows other modules to respond to dial rotations with precise control.
+
+Here's an example of how to configure MMM-HueControl to work with a Hue dial:
+
+```js
+{
+    module: "MMM-HueControl",
+    config: {
+        hueBridgeIpAddress: "your-hue-bridge-ip-address",
+        hueApplicationKey: "your-hue-application-key",
+        events: [
+            {
+                eventId: "e95a3f4a-1f12-47c6-a4ff-ff43e9d74450",
+                eventType: "relative_rotary",
+                eventContent: {
+                    relative_rotary: {
+                        rotary_report: {
+                            rotation: {
+                                direction: "clock_wise",
+                            }
+                        }
+                    }
+                },
+                notification: "DIALED_CLOCK_WISE"
+            }
+        ]
+    }
+}
+```
+
+For example, you could use this to control the volume of a music module or adjust the brightness of the display.
+
 ## Contributing
 
 If you find any bugs or have suggestions for improvements, please open an issue on the [GitHub repository](https://github.com/DreamyChloe/MMM-HueControl).

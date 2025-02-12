@@ -46,6 +46,12 @@ class HueEventParser {
                     type: eventData.type,
                     status: event.notification
                 }
+
+                // Add step value for relative_rotary events
+                if (eventData.type === "relative_rotary" && eventData.relative_rotary && eventData.relative_rotary.rotary_report) {
+                    status.value = eventData.relative_rotary.rotary_report.rotation.steps
+                }
+
                 if (this.debug) {
                     console.log(`Matched event: ${JSON.stringify(status)}`)
                 }
